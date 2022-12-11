@@ -1,0 +1,15 @@
+body {
+    background-image: url("/img/bg.jpg");
+    background-size:auto;
+    background-repeat: no-repeat;
+}
+
+.main_container {
+    height: 1000px;
+    width: 100vw;
+    background-color: blue;
+}
+
+header {
+    background-color: blueviolet;
+}
