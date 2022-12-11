@@ -2,6 +2,23 @@ body {
     background-image: url("/img/bg.jpg");
     background-size:auto;
     background-repeat: no-repeat;
+    margin: 0px;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    background-color: blueviolet;
+    height: 30vh;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    background-color:rgba(0, 0, 0, 0.5);
+    height: 50vh;
+
+
 }
 
 .main_container {
@@ -10,6 +27,7 @@ body {
     background-color: blue;
 }
 
-header {
-    background-color: blueviolet;
+
+#logo_img {
+
 }
