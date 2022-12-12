@@ -1,7 +1,9 @@
 body {
-    background-image: url("/img/bg.jpg");
-    background-size:auto;
-    background-repeat: no-repeat;
+    background-image: url("/img/bg.jpg"), url("/img/bg2.jpeg"); 
+    background-size:auto cover;
+    background-position: top, bottom;
+
+    background-repeat: no-repeat, no-repeat;
     margin: 0px;
 }
 
@@ -16,11 +18,9 @@ main {
     flex-direction: column;
     justify-content: start;
     background-color:rgba(0, 0, 0, 0.5);
-    height: 180vh;
+    height: 250vh;
     margin: 80px;
     border-radius: 10px;
-
-
 }
 
 h1 {
@@ -69,11 +69,20 @@ p {
 
 .band_members {
     display: flex;
+    flex-direction: column;
     margin: 10px;
 }
 
+.two_members {
+    display: flex;
+    flex-direction: row;
+    margin: 10px; 
+
+}
+
 .member_img {
-    height: 10%;
+    height: 40vh;
+    width: auto;
 }
 
 .title {
@@ -82,9 +91,17 @@ p {
     text-align: center;
 }
 
-#gabbe_div {
-    margin-top: 50px;
+#second_member_div {
+    margin-top: 100px;
     padding: 10px;
+    text-align: center;
+}
+
+#fourth_member_div {
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+
 }
 
 #logo_img {
