@@ -5,16 +5,15 @@
 * {
     --background_color: #000000;
     --background_color2: #313131;
-    --accent_color: #f74a78;
-    --text_color: white;
+    --accent_color: red;
 
-    --header_height: 300px;
+    --header_height: fit-content;
     --footer_height: 100px;
 
-    --start_height: 220vh;
+    --start_height: fit-content;
     --start_width: 80vw;
 
-    --about_height: 130vh;
+    --about_height: fit-content;
     --about_width: 60vw;
 
     --news_height: 45vh;
@@ -29,14 +28,15 @@
     padding: 0;
     box-sizing: border-box;
     overflow-x: hidden;
+    overflow-y: visible;
 }
 
 body {
     background-color: var(--background_color);
-    color: var(--text_color);
+    color: #ffffff;
     width: 100vw;
-
 }
+
 
 h1 {
     font-size: 3rem;
@@ -46,9 +46,10 @@ h1 {
 }
 
 h2 {
+    color: var(--accent_color);
     font-size: 2rem;
     text-align: center;
-    font-family: KingSpikes;
+    font-family: MetalGothic;
     letter-spacing: 5px;
 }
 
@@ -61,8 +62,16 @@ h3 {
 
 p {
     margin: 20px;
+    font-size: 1.3rem;
+    font-family: 'Times New Roman', Times, serif;
+    color: #bbbbbb;
+}
+
+a {
+    margin: 20px;
     font-size: 1.5rem;
     font-family: MetalGothic;
+    color: #bbbbbb;
 }
 
 @font-face {
@@ -95,7 +104,7 @@ p {
     grid-area: text;
     display: grid;
     grid-template-columns: 1fr 2fr;
-    grid-template-rows: 1fr 5fr 1fr;
+    grid-template-rows: fit-content fit-content fit-content; /* this is a warcrime but it seems to work*/
     grid-template-areas: 
     "about embed"
     "news members"
@@ -107,13 +116,10 @@ p {
     width: var(--start_width);
     height: var(--start_height);
 
-    padding-inline: 20px;
-
-    background-color: darkcyan;
+    gap: 20px;
 }
 
 #start_info {
-    background-color: tan;
     grid-area: about;
 
     flex-direction: column;
@@ -131,7 +137,6 @@ p {
     justify-content: center;
     align-items: center;
 
-    background-color: brown;
     grid-area: embed;
     width: 100%;
     height: 100%;
@@ -144,12 +149,11 @@ p {
 
     justify-content: flex-start;
     align-items: center;
-    gap: 20px;
+    gap: 40px;
 
     height: 100%;
     width: 100%;
     padding: 20px;
-    background-color: gold;
 }
 
 .start_news_article {
@@ -158,13 +162,11 @@ p {
     "img"
     "text";
 
-    grid-template-rows: 5fr 1fr;
+    grid-template-rows: 7fr 2fr;
     box-shadow: 0px 0px var(--accent_color);
     margin-top: 0px;
     
-    animation-name: start_news_unhover;
-    animation-duration: 0.2s;
-    animation-iteration-count: 1;
+    animation: start_news_unhover 0.2s;
     
     height: var(--news_height);
     width: var(--news_width);
@@ -205,17 +207,18 @@ p {
 
 .start_news_article:hover {
     grid-template-rows: 1fr 1fr;
-    box-shadow: 5px 10px #f74a78;
+    box-shadow: 5px 10px var(--accent_color);
     margin-top: -10px;
 
+    animation: start_news_hover 0.2s;
+}
 
-    animation-name: start_news_hover;
-    animation-duration: 0.2s;
-    animation-iteration-count: 1;
+#start_members_div {
+    grid-area: members;
 }
 
 #start_members {
-    grid-area: members;
+    overflow: visible;
     display: flex;
     flex-wrap: wrap;
 
@@ -225,6 +228,7 @@ p {
     align-items: center;
 }
 
+
 .start_member {
     grid-area: members;
     display: flex;
@@ -233,7 +237,6 @@ p {
     height: fit-content;
     width: var(--member_width);
 
-    background-color: chocolate;
 }
 
 .start_member_img_div {
@@ -247,8 +250,13 @@ p {
     height: auto;
 }
 
+.start_member:hover {
+    background-color: rgba(0,0,0,0.4);
+    animation: glow_hover 1s 0.5s ease-in infinite alternate, pre_glow_hover 0.5s linear;
+}
+
 .start_member:hover .start_member_img {
-    filter: saturate(150%);
+    filter: saturate(100%);
 }
 
 .start_member_socials > p {         /*will probubually be removed when icons are implemented*/
@@ -259,33 +267,109 @@ p {
 #start_contact {
     grid-area: contact;
     margin: 20px;
-    border: 5px solid white; 
+    border: 5px solid #bbbbbb; 
 }
 
 /*#endregion*/
 
+/*#region gallery page*/
+.gallery_main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.gallery_img {
+    width: 30%;
+    margin-bottom: 20px;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+/*#endregion*/
 
 /*#region header, footer and nav */
 
 header {
     display: flex;
-    justify-content: space-evenly;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     height: var(--header_height);
     width: 100vw;
-    background-color: darkblue;
 }
+
+#header_links_container {
+    overflow: visible;
+    display: flex;
+    align-items: center;
+    height: 80%;
+}
+
+#logo_anchor {
+    height: 90%;
+}
+#logo_img {
+    height: 300px;
+    width: auto;
+}
+
+.header_link {
+    padding: 0 20px;
+    color: white;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.header_link:hover {
+    color: gray;
+    animation: glow 1s ease-in infinite alternate;
+    
+}
+
+#social_media_info {
+    overflow: visible;
+    display: flex;
+    align-content: space-around;
+}
+
+.socialmedia_img {
+    width: 2vw;
+    height: auto;
+}
+
 
 footer {
     height: var(--footer_height);
     width: 100vw;
-    background-color: blueviolet;
+}
+#bg_ref_div {
+    z-index: -1;
+    filter: blur(7px) brightness(25%);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: fit-content;
+    height: fit-content;
+}
+#bg_ref {
+    width: 100vw;
+    height: auto;
+    animation: bg_glow 5s ease-in infinite alternate;
 }
 
 /*#endregion*/
 
+/*#region animations */
+
+
 @keyframes start_news_hover {
     from {
-        grid-template-rows: 5fr 1fr;
+        grid-template-rows: 7fr 2fr;
         box-shadow: 0px 0px var(--accent_color);
         margin-top: 0px;
     }
@@ -303,8 +387,47 @@ footer {
         margin-top: -10px;
     }
     to {
-        grid-template-rows: 5fr 1fr;
+        grid-template-rows: 7fr 2fr;
         box-shadow: 0px 0px var(--accent_color);
         margin-top: 0px;
     }
 }
+
+@keyframes pre_glow_hover {
+    from {
+        box-shadow: 0 0 0px #fff, 0 0 0px var(--accent_color);
+    }
+    to {
+        box-shadow: 0 0 5px #fff, 0 0 20px var(--accent_color);
+    }
+}
+
+@keyframes glow_hover {
+    from {
+        box-shadow: 0 0 5px #fff, 0 0 20px var(--accent_color);
+    }
+    to {
+        box-shadow: 0 0 5px #fff, 0 0 40px var(--accent_color);
+    }
+}
+
+@keyframes glow {
+    from {
+        filter: drop-shadow(0px 0px 20px var(--accent_color));
+    }
+    to {
+        filter: drop-shadow(0px 0px 50px var(--accent_color));
+    }
+}
+
+@keyframes bg_glow {
+    from {
+        filter: drop-shadow(0px 0px 20px var(--accent_color));
+    }
+    to {
+        filter: drop-shadow(0px 0px 120px var(--accent_color));
+    }
+}
+
+
+/*#endregion*/
