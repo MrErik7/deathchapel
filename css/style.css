@@ -63,7 +63,7 @@ h3 {
 p {
     margin: 20px;
     font-size: 1.3rem;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: ReadableGothic;
     color: #bbbbbb;
 }
 
@@ -84,6 +84,10 @@ a {
     src: url("../fonts/MetalGothicDemoVersionRegular.ttf")
 }
 
+@font-face {
+    font-family: ReadableGothic;
+    src: url("../fonts/GODOFWAR.TTF")
+}
 
 /*#endregion*/
 
@@ -94,21 +98,22 @@ a {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: var(--header_height) 1fr var(--footer_height);
-    grid-template-areas: 
-    "head"
-    "text"
-    "foot";
+    grid-template-areas:
+        "head"
+        "text"
+        "foot";
 }
 
 #start_main {
     grid-area: text;
     display: grid;
     grid-template-columns: 1fr 2fr;
-    grid-template-rows: fit-content fit-content fit-content; /* this is a warcrime but it seems to work*/
-    grid-template-areas: 
-    "about embed"
-    "news members"
-    "news contact";
+    grid-template-rows: fit-content fit-content fit-content;
+    /* this is a warcrime but it seems to work*/
+    grid-template-areas:
+        "about embed"
+        "news members"
+        "news contact";
 
     position: relative;
 
@@ -158,20 +163,20 @@ a {
 
 .start_news_article {
     display: grid;
-    grid-template-areas: 
-    "img"
-    "text";
+    grid-template-areas:
+        "img"
+        "text";
 
     grid-template-rows: 7fr 2fr;
     box-shadow: 0px 0px var(--accent_color);
     margin-top: 0px;
-    
+
     animation: start_news_unhover 0.2s;
-    
+
     height: var(--news_height);
     width: var(--news_width);
 
-    
+
     background-color: var(--background_color2);
 }
 
@@ -189,7 +194,7 @@ a {
 
 .start_news_info {
     grid-area: text;
-    
+
     width: inherit;
     height: 100%;
     overflow: hidden;
@@ -251,7 +256,7 @@ a {
 }
 
 .start_member:hover {
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(0, 0, 0, 0.4);
     animation: glow_hover 1s 0.5s ease-in infinite alternate, pre_glow_hover 0.5s linear;
 }
 
@@ -259,7 +264,8 @@ a {
     filter: saturate(100%);
 }
 
-.start_member_socials > p {         /*will probubually be removed when icons are implemented*/
+.start_member_socials>p {
+    /*will probubually be removed when icons are implemented*/
     padding: 0px;
     margin: 0px;
 }
@@ -267,7 +273,6 @@ a {
 #start_contact {
     grid-area: contact;
     margin: 20px;
-    border: 5px solid #bbbbbb; 
 }
 
 /*#endregion*/
@@ -279,9 +284,9 @@ a {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-  }
- 
-  .gallery_img {
+}
+
+.gallery_img {
     width: 30%;
     margin-bottom: 20px;
     object-fit: cover;
@@ -293,11 +298,67 @@ a {
 
 .gallery_img:hover {
     transform: scale(1.1);
-  }
+}
 
 
 
 /*#endregion*/
+
+/* region discography */
+.discography-container {
+    display: flex;
+    flex-direction: row;
+
+    /* For future releases this grid can be used
+     display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px; */
+
+}
+
+.disc-card {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.disc-card-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+}
+
+.disc-card-img-div {
+    display: flex;
+    justify-content: center;
+}
+
+.disc-card-img {
+    height: auto;
+    width: 50%;
+}
+
+.disc-link-container {
+    display: flex;
+    justify-content: center;
+}
+
+.disc-link-container a {
+    margin: 0 10px;
+}
+
+.disc-link-img {
+    width: 2vw;
+    height: auto;
+
+}
+
+
+
+
+/* end region */
 
 /*#region header, footer and nav */
 
@@ -320,6 +381,7 @@ header {
 #logo_anchor {
     height: 90%;
 }
+
 #logo_img {
     height: 300px;
     width: auto;
@@ -337,7 +399,7 @@ header {
 .header_link:hover {
     color: gray;
     animation: glow 1s ease-in infinite alternate;
-    
+
 }
 
 #social_media_info {
@@ -356,6 +418,7 @@ footer {
     height: var(--footer_height);
     width: 100vw;
 }
+
 #bg_ref_div {
     z-index: -1;
     filter: blur(7px) brightness(25%);
@@ -365,11 +428,13 @@ footer {
     width: fit-content;
     height: fit-content;
 }
+
 #bg_ref {
     width: 100vw;
     height: auto;
     animation: bg_glow 5s ease-in infinite alternate;
 }
+
 
 /*#endregion*/
 
@@ -382,6 +447,7 @@ footer {
         box-shadow: 0px 0px var(--accent_color);
         margin-top: 0px;
     }
+
     to {
         grid-template-rows: 1fr 1fr;
         box-shadow: 5px 10px var(--accent_color);
@@ -395,6 +461,7 @@ footer {
         box-shadow: 5px 10px var(--accent_color);
         margin-top: -10px;
     }
+
     to {
         grid-template-rows: 7fr 2fr;
         box-shadow: 0px 0px var(--accent_color);
@@ -406,6 +473,7 @@ footer {
     from {
         box-shadow: 0 0 0px #fff, 0 0 0px var(--accent_color);
     }
+
     to {
         box-shadow: 0 0 5px #fff, 0 0 20px var(--accent_color);
     }
@@ -415,6 +483,7 @@ footer {
     from {
         box-shadow: 0 0 5px #fff, 0 0 20px var(--accent_color);
     }
+
     to {
         box-shadow: 0 0 5px #fff, 0 0 40px var(--accent_color);
     }
@@ -424,6 +493,7 @@ footer {
     from {
         filter: drop-shadow(0px 0px 20px var(--accent_color));
     }
+
     to {
         filter: drop-shadow(0px 0px 50px var(--accent_color));
     }
@@ -433,6 +503,7 @@ footer {
     from {
         filter: drop-shadow(0px 0px 20px var(--accent_color));
     }
+
     to {
         filter: drop-shadow(0px 0px 120px var(--accent_color));
     }
