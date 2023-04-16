@@ -201,11 +201,17 @@ a {
     height: 100%;
     overflow: hidden;
     padding: 20px;
+
 }
 
 .start_news_article p {
     display: none;
-    font-size: 14px;
+    font-size: 18px;
+    height: 100%;
+    margin-bottom: 10px;
+
+    overflow: hidden;
+
 }
 
 .start_news_article:hover p {
