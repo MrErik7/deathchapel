@@ -180,6 +180,8 @@ a {
     background-color: var(--background_color2);
 }
 
+
+
 .start_news_img_div {
     grid-area: img;
     overflow-y: hidden;
@@ -217,6 +219,7 @@ a {
 
     animation: start_news_hover 0.2s;
 }
+
 
 #start_members_div {
     grid-area: members;
@@ -497,8 +500,9 @@ footer {
     }
 
     .start_member {
-        width: 100vw;
+        height: 100%;
         width: 100%;
+        padding: 10px;
     
 
     }
