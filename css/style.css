@@ -334,8 +334,9 @@ a {
 .disc-card {
     display: flex;
     flex-direction: column;
-    margin: 10px;
-    width: 400px;
+    margin: 20px;
+    width: 400px
+            
 }
 
 .disc-card-info {
