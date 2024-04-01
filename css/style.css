@@ -95,13 +95,9 @@ a {
 
 #start_grid_wrapper {
     width: 100vw;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: var(--header_height) 1fr var(--footer_height);
-    grid-template-areas:
-        "head"
-        "text"
-        "foot";
+    display: flex;
+    flex-direction: column;
+
 }
 
 #start_main {
