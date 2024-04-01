@@ -106,23 +106,17 @@ a {
 
 #start_main {
     grid-area: text;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: fit-content fit-content fit-content;
-    /* this is a warcrime but it seems to work*/
-    grid-template-areas:
-        "about embed"
-        "news members"
-        "news contact";
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center content vertically */
+    gap: 20px;
     position: relative;
-
-    margin-left: calc((100vw - var(--start_width))/2);
+    margin-left: calc((100vw - var(--start_width)) / 2);
     width: var(--start_width);
     height: var(--start_height);
-
-    gap: 20px;
 }
+
 
 #start_info {
     grid-area: about;
@@ -132,7 +126,7 @@ a {
     justify-content: center;
     align-items: center;
 
-    width: 100%;
+    width: 60%;
     height: 100%;
 }
 
@@ -147,104 +141,16 @@ a {
     height: 100%;
 }
 
-#start_news {
-    grid-area: news;
-    display: flex;
-    flex-direction: column;
-
-    justify-content: flex-start;
-    align-items: center;
-    gap: 20px;
-
-    height: 100%;
-    width: 100%;
-    padding: 20px;
-}
-
-.start_news_article {
-    display: grid;
-    grid-template-areas:
-        "img"
-        "text";
-
-    grid-template-rows: 7fr auto;
-    box-shadow: 0px 0px var(--accent_color);
-    margin-top: 0px;
-
-    animation: start_news_unhover 0.4s;
-
-    height: var(--news_height);
-    width: var(--news_width);
-
-
-    background-color: var(--background_color2);
-}
-
-
-
-.start_news_img_div {
-    grid-area: img;
-    overflow-y: hidden;
-    width: inherit;
-}
-
-.start_news_img {
-    position: relative;
-    width: inherit;
-    height: auto;
-}
-
-.start_news_info {
-    grid-area: text;
-
-    width: inherit;
-    height: 100%;
-    overflow: hidden;
-    padding: 5px;
-    text-align: center; /* Center-align the text */
-
-
-}
-
-.start_news_article p {
-    display: none;
-    font-size: 18px;
-    height: 100%;
-    margin-bottom: 10px;
-
-    overflow: hidden;
-
-}
-
-.start_news_article:hover p {
-    display: block;
-    padding: 0px;
-}
-
-
-.start_news_article:hover {
-    grid-template-rows: 1fr auto;
-    box-shadow: 5px 10px var(--accent_color);
-    margin-top: -10px;
-    height: max-content;
-
-    animation: start_news_hover 0.4s;
-}
-
 
 #start_members_div {
     grid-area: members;
 }
 
 #start_members {
-    overflow: visible;
     display: flex;
-    flex-wrap: wrap;
-
+    flex-wrap: wrap; /* Allow members to wrap onto new rows */
+    justify-content: space-around; /* Center members horizontally */
     gap: 20px;
-
-    justify-content: space-evenly;
-    align-items: center;
 }
 
 
