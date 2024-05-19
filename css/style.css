@@ -115,15 +115,14 @@ a {
 
 
 #start_info {
-    grid-area: about;
-
-    flex-direction: column;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    width: 60%;
-    height: 100%;
+    width: 100%;
+    max-width: 800px; /* Limit max width for readability */
+    padding: 20px; /* Add padding for better spacing */
+    box-sizing: border-box;
 }
 
 #start_embed_div {
@@ -295,6 +294,7 @@ header {
     display: flex;
     align-items: center;
     height: 80%;
+    width: 100%;
 }
 
 #logo_anchor {
@@ -431,9 +431,9 @@ footer {
 
     }
 
-    #header_links_container {
-        width: 100vw;
-
+    .discography-container {
+        flex-direction: column;
+        align-items: center;
     }
 
 
