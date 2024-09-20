@@ -1,5 +1,0 @@
-#ff7f11 //plz ändra denna till röd XD
-#ffffff // text
-#bbbbbb // text 2 & border
-#000000 // bg
-#313131 // bg 2

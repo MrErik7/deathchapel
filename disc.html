@@ -3,108 +3,141 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style2.css">
     <link rel="icon" type="image/x-icon" href="/img/new_logo2.png">
-    <title>Discography</title>
+    <title>Discography | Death Chapel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const nav = document.getElementById('nav');
+
+    hamburger.addEventListener('click', () => {
+        nav.classList.toggle('active'); // Toggle the 'active' class to show/hide menu
+    });
+</script>
+
+
 <body>
+    <!-- Header Section -->
     <header>
-        <div id="header_links_container">
-            <a href="gallery.html" class="header_link">Gallery</a>
-            <a href="index.html" id="logo_anchor" class="header_link">
-                <img alt="logo" id="logo_img" src="img/new_logo.png">
-            </a>
-            <a href="disc.html" class="header_link">Discography</a>
-        </div>
-
-        <div id="social_media_info">
-            <a href="https://www.instagram.com/death_chapel/" target="_blank"><img src="img/Instagram_logo_2016.svg.png"
-                    class="socialmedia_img" alt="insta logo"></a>
-            <a href="https://www.facebook.com/deathchapel666" target="_blank"><img src="img/Facebook_Logo_(2019).png"
-                    class="socialmedia_img" alt="facebook logo"></a>
-            <a href="https://www.youtube.com/@deathchapel" target="_blank"><img
-                    src="img/free-youtube-logo-icon-2431-thumb.png" class="socialmedia_img" alt="youtube logo"></a>
-                            	<a href="https://www.tiktok.com/@death.chapel" target="_blank"><img src="img/tiktok.webp" class="socialmedia_img" alt="tiktok logo"></a>
-
+            <!-- Navigation Menu -->
+            <nav>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="index.html" class="logo-link">
+                    <img src="img/new_logo.png" alt="Death Chapel logo" class="logo">
+                </a>
+                <a href="disc.html" class="nav-link active">Discography</a>
+            </nav>
+    
+            <!-- Social Icons -->
+            <div class="social-icons">
+                <a href="https://www.instagram.com/death_chapel/" target="_blank">
+                    <img src="img/social_icons/instagram.png" alt="Instagram">
+                </a>
+                <a href="https://www.facebook.com/deathchapel666" target="_blank">
+                    <img src="img/social_icons/facebook.png" alt="Facebook">
+                </a>
+                <a href="https://www.youtube.com/@deathchapel" target="_blank">
+                    <img src="img/social_icons/youtube.png" alt="YouTube">
+                </a>
+                <a href="https://www.tiktok.com/@death.chapel" target="_blank">
+                    <img src="img/social_icons/tiktok.webp" alt="TikTok">
+                </a>
+            </div>
         </div>
     </header>
-
-
-    <div class="discography-container">
-
-        <article class="disc-card">
-            <div class="disc-card-img-div">
-                <img src="img/disc_pics/51dqMqVCSEL._UXNaN_FMjpg_QL85_.jpg" alt="human nature ep" class="disc-card-img" style="width: 300px; height: auto;">
-            </div>
-
-            <div class="disc-link-container">
-                <a href="https://open.spotify.com/album/2h2j7q6wBqMZmTjjRK08IQ" target="_blank"><img
-                        src="img/spotify_logo.png" class="disc-link-img" alt="spotify logo"></a>
-
-                <a href="https://www.youtube.com/watch?v=ANXRRa7hfUo" target="_blank"><img
-                        src="img/free-youtube-logo-icon-2431-thumb.png" class="disc-link-img"
-                        alt="youtube logo"></a>
-            </div>
-            <div class="disc-card-info">
-                <h3>Human Nature</h3>
-                <ol>
-                    <li>1. Human Nature</li>
-                    <li>2. Mortuus</li>
-                    <li>3. Accidental Euthanasia</li>
-                </ol>
-            </div>
-        </article>
-
     
-    <article class="disc-card">
-        <div class="disc-card-img-div">
-        <img src="img/disc_pics/envythesun_cover.png" alt="envy the sun ep cover" class="disc-card-img" style="width: 300px; height: auto;">
-        </div>
 
-        <div class="disc-link-container">
-            <a href="https://open.spotify.com/album/5la4y2idt0Sfm6DygOJB9W?si=yjLnjFtdQPygHImTR73W6A" target="_blank"><img
-                    src="img/spotify_logo.png" class="disc-link-img" alt="spotify logo"></a>
 
-            <a href="https://www.youtube.com/watch?v=nv6Mh67_Cj4&t=641s" target="_blank"><img
-                    src="img/free-youtube-logo-icon-2431-thumb.png" class="disc-link-img"
-                    alt="youtube logo"></a>
-        </div>
-        <div class="disc-card-info">
-            <h3>Envy The Sun</h3>
-            <ol>
-                <li>1. Wander</li>
-                <li>2. Antisocial</li>
-                <li>3. Insomnia</li>
-                <li>4. Envy The Sun</li>
-            </ol>
-        </div>
-    </article>
-            
-    <article class="disc-card">
-            <div class="disc-card-img-div">
-                <img src="img/disc_pics/acid.png" alt="acid single" class="disc-card-img" style="width: 300px; height: auto;">
+    <!-- Discography Section -->
+    <section class="discography-section">
+        <div class="discography-grid">
+            <!-- Card 1 -->
+            <div class="disc-card">
+                <img src="img/disc_pics/51dqMqVCSEL._UXNaN_FMjpg_QL85_.jpg" alt="Human Nature EP" class="disc-image">
+                <div class="disc-info">
+                    <h3>Human Nature</h3>
+                    <ul>
+                        <li>1. Human Nature</li>
+                        <li>2. Mortuus</li>
+                        <li>3. Accidental Euthanasia</li>
+                    </ul>
+                    <div class="streaming-links">
+                        <a href="https://open.spotify.com/album/2h2j7q6wBqMZmTjjRK08IQ" target="_blank">
+                            <img src="img/social_icons/spotify.png" alt="Spotify">
+                        </a>
+                        <a href="https://www.youtube.com/watch?v=ANXRRa7hfUo" target="_blank">
+                            <img src="img/social_icons/youtube.png" alt="YouTube">
+                        </a>
+                    </div>
+                </div>
             </div>
 
-            <div class="disc-card-info">
-                <h3>Acidification</h3>
+            <!-- Card 2 -->
+            <div class="disc-card">
+                <img src="img/disc_pics/envythesun_cover.png" alt="Envy The Sun EP" class="disc-image">
+                <div class="disc-info">
+                    <h3>Envy The Sun</h3>
+                    <ul>
+                        <li>1. Wander</li>
+                        <li>2. Antisocial</li>
+                        <li>3. Insomnia</li>
+                        <li>4. Envy The Sun</li>
+                    </ul>
+                    <div class="streaming-links">
+                        <a href="https://open.spotify.com/album/5la4y2idt0Sfm6DygOJB9W" target="_blank">
+                            <img src="img/social_icons/spotify.png" alt="Spotify">
+                        </a>
+                        <a href="https://www.youtube.com/watch?v=nv6Mh67_Cj4&t=641s" target="_blank">
+                            <img src="img/social_icons/youtube.png" alt="YouTube">
+                        </a>
+                    </div>
+                </div>
             </div>
-            
-            <div class="disc-link-container">
-                <a href="https://open.spotify.com/album/7svS9MnTRPS6rqXeMcCkck?si=GbbSte_uSX-dxYdYKDiaBw" target="_blank"><img
-                        src="img/spotify_logo.png" class="disc-link-img" alt="spotify logo"></a>
-    
-                <a href="https://www.youtube.com/watch?v=rXyy-YGXZs8" target="_blank"><img
-                        src="img/free-youtube-logo-icon-2431-thumb.png" class="disc-link-img"
-                        alt="youtube logo"></a>
+
+            <!-- Card 3 -->
+            <div class="disc-card">
+                <img src="img/disc_pics/acid.png" alt="Acidification Single" class="disc-image">
+                <div class="disc-info">
+                    <h3>Acidification</h3>
+                    <div class="streaming-links">
+                        <a href="https://open.spotify.com/album/7svS9MnTRPS6rqXeMcCkck" target="_blank">
+                            <img src="img/social_icons/spotify.png" alt="Spotify">
+                        </a>
+                        <a href="https://www.youtube.com/watch?v=rXyy-YGXZs8" target="_blank">
+                            <img src="img/social_icons/youtube.png" alt="YouTube">
+                        </a>
+                    </div>
+                </div>
             </div>
-        </article>
 
-</div>
+             <!-- Card 4 -->
+             <div class="disc-card">
+                <img src="img/disc_pics/vemkansegla.png" alt="Vem Kan Segla Single" class="disc-image">
+                <div class="disc-info">
+                    <h3>Vem Kan Segla</h3>
+                    <div class="streaming-links">
+                        <a href="https://open.spotify.com/album/03Iwxg0bjOQQYV6uEsfLAB?si=OLvm9XeHQx2kwTTi1HkuKg" target="_blank">
+                            <img src="img/social_icons/spotify.png" alt="Spotify">
+                        </a>
+                        <a href="https://www.youtube.com/watch?v=MJj73q5_Mbk" target="_blank">
+                            <img src="img/social_icons/youtube.png" alt="YouTube">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-
+    <!-- Footer -->
+    <footer>
+        <p>&copy; All Rights Reserved.</p>
+    </footer>
 </body>
 
 </html>

@@ -115,14 +115,14 @@ a {
 
 
 #start_info {
-    display: flex;
+    grid-area: about;
+
     flex-direction: column;
+    display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    max-width: 800px; /* Limit max width for readability */
-    padding: 20px; /* Add padding for better spacing */
-    box-sizing: border-box;
+
+    height: 100%;
 }
 
 #start_embed_div {
@@ -156,8 +156,10 @@ a {
 
     height: fit-content;
     width: var(--member_width);
+        
     margin-top: 50px;
-    
+
+
 }
 
 .start_member_img_div {
@@ -294,7 +296,6 @@ header {
     display: flex;
     align-items: center;
     height: 80%;
-    width: 100%;
 }
 
 #logo_anchor {
@@ -366,109 +367,103 @@ footer {
         height: auto;
     }
 }
-
 /* Mobile */
 @media (max-width: 768px) {
 
+    /* General paragraph styling for mobile */
     p {
-        width: 70vw;
+        width: 100%;  /* Ensure paragraph width adjusts for mobile */
+        padding: 0 5vw; /* Add padding on the sides */
     }
 
+    /* Main container adjustments */
+    #start_main {
+        width: 100vw; /* Ensure the main container takes up full width */
+        padding: 0; /* Reset padding */
+        box-sizing: border-box; /* Include any padding within width */
+    }
+
+    /* Info section adjustments */
+    #start_info {
+        width: 100%; /* Make the section full-width */
+        display: flex;
+        flex-direction: column; /* Ensure column layout on mobile */
+    }
+
+    /* News section adjustments */
+    .start_news_info {
+        text-align: center; /* Center the text */
+        width: 100%; /* Full width for text */
+        padding: 0 5vw; /* Add side padding */
+        box-sizing: border-box; /* Include padding within width */
+    }
+
+    /* Social media icons adjustments */
     .socialmedia_img {
         width: 8vw; /* Increase the width for mobile devices */
         height: auto; /* Maintain aspect ratio */
     }
 
-
-    .start_member_img_div {
-        display: flex;
-        align-items: center;
-        width: fit-content;
-        height: auto;
-    }
-
-    .start_member_img {
-        width: 100%;
-        height: 100%;
-    }
-
-    .start_news_article:hover {
-        grid-template-rows: 1fr auto;;
-        box-shadow: 5px 10px var(--accent_color);
-        margin-top: -10px;
-    }
-
-    .start_news_info {
-        text-align: center;
-        width: 100%; 
-        padding: 0 30px; 
-        box-sizing: border-box;
-    }
-
-    .start_news_info h3 {
-        font-size: 1.4rem;
-    }
-    
-    
-   
-      .start_member:hover {
-        animation: none;
-      }
-
-    .header_link {
-        font-size: 15px;
-    }
-
-    .start_news_article {
-        width: 100vw;
-    }
-
+    /* Member section adjustments */
     .start_member {
         height: 100%;
         width: 100%;
         padding: 10px;
-    
-
     }
 
-    .discography-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-
-    #start_main {
-        display: flex;
-        flex-direction: column;
-    }
-
-
+    /* Logo adjustments */
     #logo_img {
         height: 100px;
         width: auto;
         margin: 0px;
     }
 
-
+    /* Members container adjustments */
     #start_members {
         display: flex;
-        flex-direction: column;
+        flex-direction: column; /* Ensure column layout on mobile */
         width: 100%;
     }
 
-
-}
-
-@media (max-width: 380px) {
-
+    /* Header link adjustments */
     .header_link {
-        font-size: 10px;
+        font-size: 15px;
     }
 
+    /* Header links container adjustments */
+    #header_links_container {
+        width: 100vw;
+    }
+        
+    /* Discography adjustments */
+    .discography-container {
+        flex-direction: column; /* Stacks the release cards vertically */
+        align-items: center; /* Centers the cards horizontally */
+    }
 
+    .disc-card {
+        width: 90%; /* Adjust the width for better mobile display */
+        margin: 10px 0; /* Adjust the margin to create space between cards */
+    }
+
+    .disc-card-img {
+        width: 100%; /* Make sure the images are responsive */
+        height: auto;
+    }
+
+    .disc-link-img {
+        width: 10vw; /* Slightly increase the size of the icons on mobile */
+    }
+}
 
 }
 
+/* Extra small screens (below 380px) */
+@media (max-width: 380px) {
+    .header_link {
+        font-size: 10px; /* Further reduce font size for extra small screens */
+    }
+}
 
 /*#endregion*/
 
